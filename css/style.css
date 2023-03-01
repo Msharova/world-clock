@@ -10,6 +10,9 @@ h1 {
 h2, p {
     margin: 0;
 }
+h3 {
+    color: #535151;
+}
 main {
     border: 2px solid var(--main-color);
     border-radius: 10px;
@@ -22,9 +25,12 @@ section.dropdown select {
     width: 100%;
     font-size: 20px;
     padding: 10px;
+    border-radius: 8px;
+    opacity: 0.8;
 }
 section.dropdown select option {
     text-align: start;
+    color: #858383;
 }
 section.listed-cities {
     display: flex;
@@ -42,7 +48,8 @@ section.listed-cities div:last-child {
 }
 section.listed-cities div div{
     display: flex;
-    flex-direction: column;   
+    flex-direction: column;
+    margin-bottom: 0;   
 }
 section.listed-cities div div p,
 section.listed-cities div div h2 {
