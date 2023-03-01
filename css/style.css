@@ -1,3 +1,66 @@
-*{
+* {
     text-align: center;
+}
+:root {
+    --main-color: #007BFF;
+}
+h1 {
+    color: var(--main-color);
+}
+h2, p {
+    margin: 0;
+}
+main {
+    border: 2px solid var(--main-color);
+    border-radius: 10px;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 600px;
+}
+section.dropdown select {
+    display: block;
+    width: 100%;
+    font-size: 20px;
+    padding: 10px;
+}
+section.dropdown select option {
+    text-align: start;
+}
+section.listed-cities {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+section.listed-cities div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+section.listed-cities div:last-child {
+    margin-bottom: 0;    
+}
+section.listed-cities div div{
+    display: flex;
+    flex-direction: column;   
+}
+section.listed-cities div div p,
+section.listed-cities div div h2 {
+    text-align: start;
+}
+section.listed-cities div div h2 {
+    color: var(--main-color);
+}
+section.listed-cities div div p {
+    opacity: 0.8;
+}
+section.listed-cities div p.city-current-time {
+    font-size: 28px;
+    display: flex;
+    align-self: center;
+    color: var(--main-color);
+}
+a {
+    text-decoration: none;
+    color: var(--main-color);
 }

@@ -5,5 +5,5 @@ function handleCityCHange(event) {
             }
         }
 
-let parisSelect = document.querySelector("#countries");
+let parisSelect = document.querySelector("#dropdown-cities");
 parisSelect.addEventListener("change", handleCityCHange);
