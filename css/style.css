@@ -1,5 +1,6 @@
 * {
     text-align: center;
+    font-family: 'Courier New', Courier, monospace;
 }
 :root {
     --main-color: #007BFF;
@@ -70,4 +71,9 @@ section.listed-cities div p.city-current-time {
 a {
     text-decoration: none;
     color: var(--main-color);
+}
+footer {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    max-width: 400px;
+    margin: 0 auto;
 }
