@@ -75,8 +75,8 @@ function cityUpdate () {
 
     let m = moment().format("MMMM Do YYYY");
 
-    let cityDateBrno = document.querySelector("#brno .city-date");
-    let cityTimeBrno = document.querySelector("#brno .city-current-time");
+    let cityDateBrno = document.querySelector("#prague .city-date");
+    let cityTimeBrno = document.querySelector("#prague .city-current-time");
     cityDateBrno.innerHTML = m;
     cityTimeBrno.innerHTML = moment().tz("Europe/Prague").format("h:mm:ss a");
 
@@ -85,15 +85,15 @@ function cityUpdate () {
     cityDateSeattle.innerHTML = m;
     cityTimeSeattle.innerHTML = moment().tz("America/Vancouver").format("h:mm:ss a");
 
-    let cityDateRaleigh = document.querySelector("#raleigh .city-date");
-    let cityTimeRaleigh = document.querySelector("#raleigh .city-current-time");
+    let cityDateRaleigh = document.querySelector("#washington .city-date");
+    let cityTimeRaleigh = document.querySelector("#washington .city-current-time");
     cityDateRaleigh.innerHTML = m;
     cityTimeRaleigh.innerHTML = moment().tz("America/New_York").format("h:mm:ss a");
 
-    let cityDateMoscow = document.querySelector("#moscow .city-date");
-    let cityTimeMoscow = document.querySelector("#moscow .city-current-time");
+    let cityDateMoscow = document.querySelector("#london .city-date");
+    let cityTimeMoscow = document.querySelector("#london .city-current-time");
     cityDateMoscow.innerHTML = m;
-    cityTimeMoscow.innerHTML = moment().tz("Europe/Moscow").format("h:mm:ss a");
+    cityTimeMoscow.innerHTML = moment().tz("Europe/London").format("h:mm:ss a");
 }
 
 setInterval(cityUpdate, 1000);
