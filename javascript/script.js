@@ -1,4 +1,9 @@
 function handleCityChange(event) {
+    let cityValue = event.target.value;
+    let citiesElement = document.querySelector("#listed-cities");
+    let cityName = cityValue.replace("_", " ").split("/")[1];
+    let cityDate;
+    let cityTime; 
     let mainTemplate = `
         <div id="brno">
             <div>
@@ -29,27 +34,41 @@ function handleCityChange(event) {
             <p class="city-current-time">Loading</p>
         </div>
         `;
-    if (event.target.value) {
-        let cityValue = event.target.value;
-        let citiesElement = document.querySelector("#listed-cities");
-        let cityName = cityValue.replace("_", " ").split("/")[1];
-        let cityDate = moment().tz(cityValue).format("MMMM Do, YYYY");
-        let cityTime = moment().tz(cityValue).format("h:mm:ss a");
-        citiesElement.innerHTML = `
-        <div id="selected-city">
-            <div>
-                <h2 class="city">${cityName}</h2>
-                <p class="city-date">${cityDate}</p>
+    switch (cityValue) {
+        case "your-location":
+            let cityTimeZone = moment.tz.guess();
+            cityDate = moment().tz(cityTimeZone).format("MMMM Do, YYYY");
+            cityTime = moment().tz(cityTimeZone).format("h:mm:ss a");
+            cityTimeZone = cityTimeZone.replace("_", " ").split("/")[1];
+            citiesElement.innerHTML = `
+                <div id="selected-city">
+                    <div>
+                        <h2 class="city">${cityTimeZone}</h2>
+                        <p class="city-date">${cityDate}</p>
+                    </div>
+                    <p class="city-current-time">${cityTime}</p>
+                </div>
+                ${mainTemplate}`;
+            break;        
+        case "":
+            citiesElement = document.querySelector("#listed-cities");
+            citiesElement.innerHTML = mainTemplate;
+            break;
+        default:
+            cityDate = moment().tz(cityValue).format("MMMM Do, YYYY");
+            cityTime = moment().tz(cityValue).format("h:mm:ss a");
+            citiesElement.innerHTML = `
+            <div id="selected-city">
+                <div>
+                    <h2 class="city">${cityName}</h2>
+                    <p class="city-date">${cityDate}</p>
+                </div>
+                <p class="city-current-time">${cityTime}</p>
             </div>
-            <p class="city-current-time">${cityTime}</p>
-        </div>
-        ${mainTemplate}`;
-    } else {
-        let citiesElement = document.querySelector("#listed-cities");
-        citiesElement.innerHTML = mainTemplate;
+            ${mainTemplate}`;
+            break;
     }
 }
-
 function cityUpdate () {
     let dropdownSelect = document.querySelector("#dropdown-cities");
     dropdownSelect.addEventListener("change", handleCityChange);
