@@ -5,9 +5,9 @@ function handleCityChange(event) {
     let cityDate;
     let cityTime; 
     let mainTemplate = `
-        <div id="brno">
+        <div id="prague">
             <div>
-                <h2 class="city">Brno</h2>
+                <h2 class="city">Prague</h2>
                 <p class="city-date">Loading</p>
             </div>
             <p class="city-current-time">Loading</p>
@@ -19,16 +19,16 @@ function handleCityChange(event) {
             </div>
             <p class="city-current-time">Loading</p>
         </div>
-        <div id="raleigh">
+        <div id="washington">
             <div>
-                <h2 class="city">Raleigh</h2>
+                <h2 class="city">Washington</h2>
                 <p class="city-date">Loading</p>
             </div>
             <p class="city-current-time">Loading</p>
         </div>
-        <div id="moscow">
+        <div id="london">
             <div>
-                <h2 class="city">Moscow</h2>
+                <h2 class="city">London</h2>
                 <p class="city-date">Loading</p>
             </div>
             <p class="city-current-time">Loading</p>
@@ -75,25 +75,25 @@ function cityUpdate () {
 
     let m = moment().format("MMMM Do YYYY");
 
-    let cityDateBrno = document.querySelector("#prague .city-date");
-    let cityTimeBrno = document.querySelector("#prague .city-current-time");
-    cityDateBrno.innerHTML = m;
-    cityTimeBrno.innerHTML = moment().tz("Europe/Prague").format("h:mm:ss a");
+    let cityDatePrague = document.querySelector("#prague .city-date");
+    let cityTimePrague = document.querySelector("#prague .city-current-time");
+    cityDatePrague.innerHTML = m;
+    cityTimePrague.innerHTML = moment().tz("Europe/Prague").format("h:mm:ss a");
 
     let cityDateSeattle = document.querySelector("#seattle .city-date");
     let cityTimeSeattle = document.querySelector("#seattle .city-current-time");
     cityDateSeattle.innerHTML = m;
     cityTimeSeattle.innerHTML = moment().tz("America/Vancouver").format("h:mm:ss a");
 
-    let cityDateRaleigh = document.querySelector("#washington .city-date");
-    let cityTimeRaleigh = document.querySelector("#washington .city-current-time");
-    cityDateRaleigh.innerHTML = m;
-    cityTimeRaleigh.innerHTML = moment().tz("America/New_York").format("h:mm:ss a");
+    let cityDateWashington = document.querySelector("#washington .city-date");
+    let cityTimeWashington = document.querySelector("#washington .city-current-time");
+    cityDateWashington.innerHTML = m;
+    cityTimeWashington.innerHTML = moment().tz("America/New_York").format("h:mm:ss a");
 
-    let cityDateMoscow = document.querySelector("#london .city-date");
-    let cityTimeMoscow = document.querySelector("#london .city-current-time");
-    cityDateMoscow.innerHTML = m;
-    cityTimeMoscow.innerHTML = moment().tz("Europe/London").format("h:mm:ss a");
+    let cityDateLondon = document.querySelector("#london .city-date");
+    let cityTimeLondon = document.querySelector("#london .city-current-time");
+    cityDateLondon.innerHTML = m;
+    cityTimeLondon.innerHTML = moment().tz("Europe/London").format("h:mm:ss a");
 }
 
 setInterval(cityUpdate, 1000);
